@@ -10,6 +10,8 @@
 #define DEFAULT 0
 #define RAISE 1
 #define LOWER 2
+#define NUMPAD 3
+
 
 #define NONE 0
 
@@ -21,13 +23,13 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
 // | RAISE |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |   SPACE  	  | LEFT_BRACKET |  | RIGHT_BRACKET | LOWER  |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |   LT RAISE  |   ESC   |  |   RET   | LOWER  | TAB  | BSPC  | R-ALT |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |   RAISE  | L SHIFT |  | L SHIFT | LOWER  |  N   |  M    |  ,    |  .   |   /   | CTRL |
+//                     | GUI  | DEL  | RET  |   RAISE  |   ESC   |  |   RET   | LOWER  | TAB  | BSPC  | R-ALT |
 			bindings = <
 	&kp TAB   &kp Q &kp W &kp E &kp R &kp T                                                         &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
 	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                         &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp SPACE &kp LEFT_BRACKET        	&kp RIGHT_BRACKET &lt LOWER F24  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &none &kp LGUI &kp LEFT_CONTROL &lt RAISE F24 &kp LEFT_ALT	&kp BACKSPACE &lt SPACE &kp RET &kp BSPC &kp RALT
+	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &lt RAISE F24 &kp LSHFT        &kp LSHFT &lt LOWER F24  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        	   &kp RET   &lt LOWER F24  &kp TAB &kp BSPC &kp RALT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -41,7 +43,7 @@
 //                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
 			bindings = <
 	&none     &kp ESC 	&none 	&none 	&none 	&none 										&kp PAGE_UP		&none 	  &kp UP 	 &none 		&none 	&none
-	&none     &none 	&kp LG(LC(LEFT_ARROW)) 	&none 	&kp LG(LC(RIGHT_ARROW)) 	&none 	&kp PAGE_DOWN	&kp LEFT  &kp DOWN   &kp RIGHT 	&none 	&none
+	&none     &none 	&kp LG(LC(LEFT_ARROW)) 	&none 	&kp LG(LC(RIGHT_ARROW)) 	&none 										&kp PAGE_DOWN	&kp LEFT  &kp DOWN   &kp RIGHT 	&none 	&none
 	&none     &none 	&none 	&none 	&none 	&none 	&none	&none		&none	&none 	&none 	&none	&none 	 &none 		&none 	&none
 	                 	&none	&none	&none	&none	&none	&none		&none	&none	&none	&none
 			>;
